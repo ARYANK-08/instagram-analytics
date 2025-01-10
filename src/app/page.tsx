@@ -2063,6 +2063,18 @@ const DUMMY_ACCOUNT_INSIGHTS: AccountInsights = {
   accounts_engaged: 23456
 };
 
+const calculateEngagementRate = () => {
+    const totalPosts = MediaList.length;
+    if (totalPosts === 0) return 0;
+    
+    const totalEngagement = mediaData.reduce(
+        (sum, post) => sum + post.like_count + post.comments_count, 
+        0
+    );
+
+    // Engagement rate = (Likes + Comments) / Number of Posts
+    return (totalEngagement / totalPosts).toFixed(1);
+};
 // Utility Functions
 const extractHashtags = (text: string): string[] => {
   const hashtagRegex = /#[\w\u0590-\u05ff]+/g;
@@ -2229,16 +2241,7 @@ export default function Home() {
     setUseDummyData(false);
   };
 
-  const calculateEngagementRate = () => {
-    const totalPosts = MediaList.length;
-    if (totalPosts === 0) return 0;
-    
-    const totalEngagement = mediaData.reduce((sum, post) => 
-      sum + post.like_count + post.comments_count, 0);
-    
-    // Engagement rate = (Likes + Comments) / Number of Posts
-    return (totalEngagement / totalPosts).toFixed(1);
-  };
+ 
 
   const formatDate = (timestamp: string) => {
     return new Date(timestamp).toLocaleDateString("en-US", {
