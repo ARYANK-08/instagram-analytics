@@ -8,4 +8,5 @@ Viralytics transforms social media analytics with **real-time data** from Instag
 
 ## **Explore Viralytics**
 - **Live:** [Try It Now](http://instagram-analytics-nice-vibes.vercel.app)  
-- **Demo:** [YT Video]()
+- **Demo:** <iframe width="560" height="315" src="https://www.youtube.com/embed/jNJqcRs7T4Q" frameborder="0" allowfullscreen></iframe>
+
